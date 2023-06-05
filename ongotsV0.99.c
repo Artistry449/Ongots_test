@@ -327,7 +327,7 @@ int main()
 
         for (i = 0; i < 3; i++)
         {   
-            //clearScreen();
+            clearScreen();
             printf("\n\nPLAYER 1\n\n");
             DrawBoard(myBoard1, enemyBoard1);
             printf("\nbuudah coordinataa oruulna uu \nX=");
@@ -361,6 +361,7 @@ int main()
         // player 2 window
         for (i = 0; i < 3; i++)
         {
+            clearScreen();
             printf("PLAYER 2\n\n");
             DrawBoard(myBoard2, enemyBoard2);
             printf("\nbuudah coordinataa oruulna uu \nX=");
