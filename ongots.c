@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Board-nii hemjee 10x10
-// Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
+// Board-nii hemjee 20x20
 #define SIZE 20
 // Board-iig coordinattai ni hewleh
 void DrawBoard(char data1[][20], char data2[][20]){
+    int i, iX, iY;
     printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
-    for(int i = 0; i < 45; i++){
+    for(i = 0; i < 45; i++){
         if(i > 19 && i < 25)
             if( i == 20) printf("       ");
             else  printf("    ");
@@ -24,14 +24,14 @@ void DrawBoard(char data1[][20], char data2[][20]){
         }
     }
     printf("\n");
-    for(int i = 0; i < 45; i++){
+    for(i = 0; i < 45; i++){
         if(i > 19 && i < 25) printf("    ");
         else if(i == 0 || i == 25) printf("  +---+");
         else printf("---+");
     }
     printf("\n");
-    for(int iY = 0; iY < 20; iY++){ 
-        for(int iX = 0; iX < 45; iX++){
+    for(iY = 0; iY < 20; iY++){ 
+        for(iX = 0; iX < 45; iX++){
             if(iX > 19 && iX < 25) printf("    ");
             else if(iX == 0){
                 if(iY < 9) printf(" %d| %c |",iY+1, data1[iY][iX]);
@@ -45,7 +45,7 @@ void DrawBoard(char data1[][20], char data2[][20]){
             else printf(" %c |", data2[iY][iX-25]);
         }
         printf("\n");
-        for(int i = 0; i < 45; i++){
+        for(i = 0; i < 45; i++){
             if(i > 19 && i < 25) printf("    ");
             else if(i == 0 || i == 25) printf("  +---+");
             else printf("---+");
@@ -54,7 +54,8 @@ void DrawBoard(char data1[][20], char data2[][20]){
     }
 
 }
-char fire(int x, int y, int myBoard[][20], int enemyBoard[][20], int planeData[][8][2]){
+char fire(int x, int y, int myPlaneNum, int myBoard[][20], int enemyBoard[][20]){
+    int i, j;
     //togloch hooson zai onsoh tohoildol
     if(enemyBoard[x][y] == " "){
         myBoard[x][y] = 'H';
@@ -62,15 +63,7 @@ char fire(int x, int y, int myBoard[][20], int enemyBoard[][20], int planeData[]
     }
     //toglogch daisnii pngotsnii tolgoig onon ongotsiig sunsuusuh punkts
     else if(enemyBoard[x][y] == "T"){
-        for(int i = 0; i < 8; i++){
-            if(planeData[i][0][0] == x && planeData[i][0][1] == y ){
-                myBoard[planeData[i][0][0]][planeData[i][0][1]] = 'X';
-                for(int j = 1; j < 8; j++){
-                    myBoard[planeData[i][j][0]][planeData[i][j][1]] = 'X';
-                }
-                break;
-            }
-        }
+        myBoard[x][y] = 'X';
         return 'X';
     }
     //toglogch daisnii ongotsiig onon sharhaduulsan tohoildol
