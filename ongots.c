@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
 #include <time.h>
 #include <stdbool.h>
 
@@ -9,7 +8,7 @@
 >>>>>>> b377c25c7b598b0e1d90a11dfabe7d29464ebc21
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
-#define SIZE 20
+#define SIZE 21
 // Board-iig coordinattai ni hewleh
 <<<<<<< HEAD
 /*
@@ -19,31 +18,45 @@ test desu
 >>>>>>> b377c25c7b598b0e1d90a11dfabe7d29464ebc21
 void DrawBoard(char data1[][20], char data2[][20]){
     printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
-    for(int i = 0; i < 45; i++){
-        if(i > 19 && i < 25) printf("    ");
-        else if(i == 0 || i == 25) printf("+---+");
-        else printf("---+");
+    for (int i = 0; i < 45; i++)
+    {
+        if (i > 19 && i < 25)
+            printf("    ");
+        else if (i == 0 || i == 25)
+            printf("+---+");
+        else
+            printf("---+");
     }
     printf("\n");
-    for(int iY = 0; iY < 20; iY++){
-        for(int iX = 0; iX < 45; iX++){
-            if(iX > 19 && iX < 25) printf("    ");
-            else if(iX == 0) printf("| %c |", data1[iY][iX]);
-            else if(iX == 25) printf("| %c |", data2[iY][iX-25]);
-            else if(iX > 0 && iX < 20) printf(" %c |", data1[iY][iX]);
-            else printf(" %c |", data2[iY][iX-25]);
+    for (int iY = 0; iY < 20; iY++)
+    {
+        for (int iX = 0; iX < 45; iX++)
+        {
+            if (iX > 19 && iX < 25)
+                printf("    ");
+            else if (iX == 0)
+                printf("| %c |", data1[iY][iX]);
+            else if (iX == 25)
+                printf("| %c |", data2[iY][iX - 25]);
+            else if (iX > 0 && iX < 20)
+                printf(" %c |", data1[iY][iX]);
+            else
+                printf(" %c |", data2[iY][iX - 25]);
         }
         printf("\n");
-        for(int i = 0; i < 45; i++){
-            if(i > 19 && i < 25) printf("    ");
-            else if(i == 0 || i == 25) printf("+---+");
-            else printf("---+");
+        for (int i = 0; i < 45; i++)
+        {
+            if (i > 19 && i < 25)
+                printf("    ");
+            else if (i == 0 || i == 25)
+                printf("+---+");
+            else
+                printf("---+");
         }
         printf("\n");
     }
-
 }
-*/
+
 void printBoard(char plane[SIZE][SIZE])
 {
     int i, j;
@@ -78,17 +91,20 @@ void duusgah()
     printf("Togloom duuslaa!");
     exit(0);
 }
-
-void AddPlane(char plane[SIZE][SIZE], int planeNum){
+void AddPlane(char plane[SIZE][SIZE], int planeNum)
+{
     int x, y, z;
-    bool a ;
+    bool a;
     srand(time(NULL));
-    for(int i=0; i<planeNum; i++){
+    for (int i = 0; i < planeNum; i++)
+    {
         a = false;
-        while(a = false){
-            x = rand()%21;
-            y = rand()%21;
-            if(plane[x][y] == '.' && x != 0 && y != 0){
+        while (a == false)
+        {
+            x = rand() % 21;
+            y = rand() % 21;
+            if (plane[x][y] == '.' && x != 0 && y != 0)
+            {
                 a = true;
             }
         }
@@ -97,24 +113,15 @@ void AddPlane(char plane[SIZE][SIZE], int planeNum){
             z = rand()%4;
             switch(z){
                 case 0:
-                Deesh(plane[SIZE][SIZE], a, x, y);
+
             }
         }
     }
 }
 bool Deesh(char p[SIZE][SIZE], bool a, int x, int y){
-    if(p[x+1][y] == '.' && p[x+2][y] == '.' && p[x+3][y] == '.' && p[x+1][y-1] == '.' && p[x+1][y+1] == '.' p[x+3][y-1] == '.' && p[x+3][y+1] == '.'){
-        p[x][y] = 'T';
-        p[x+1][y] = 'B';
-        p[x+2][y] = 'B';
-        p[x+3][y] = 'B';
-        p[x+1][y-1] = 'B';
-        p[x+1][y+1] = 'B';
-        p[x+3][y-1] = 'B';
-        p[x+3][y+1] = 'B';
-        a = true;
+    if(p[x+1][y]){
+        
     }
-    return a;
 }
 int main()
 {
@@ -144,7 +151,7 @@ int main()
     printf("      ---TOGLOOMIIN DUREM---\n\n");
     printf("1. Ta uuriin ongotsnii coordinate-iig oruulna\n");
     printf("2. Ongotsnii coordinate-iig oruulj buudaj sharhduulna\n");
-    printf("3. Herev togloomiig duusgahiig husvel y: 0 x: 0 gj oruulna\n\n");
+    printf("3. Herev togloomiig duusgahiig husvel y: 0 x: 0 goruulna\n\n");
 
     printf("T - ongotsnii tolgoi\n");
     printf("B - ongotsnii biy\n");
@@ -160,44 +167,6 @@ int main()
     // Uusgeh ongotsnii toog 0 gj oruulval program duusna
     if (planeNum == 0)
         duusgah();
-    for (int tooluur = 1; tooluur <= planeNum; tooluur++)
-    {
-        printf("ongots %d: \n", tooluur);
-        // Ongotsnii tolgoin coordinate-uudiig avah
-        printf("ongotsnii tolgoi hesgiin coordinate\ny:  ");
-        scanf("%d", &Tx);
-        printf("x:  ");
-        scanf("%d", &Ty);
-        // Ongotsnii biyiin coordinate-uudiig avah
-        if (Tx == 0 && Ty == 0)
-            duusgah();
-        printf("ongotsnii biynii hesgiin coordinate-uud: \n");
-        for (int tooluurB = 1; tooluurB <= 7; tooluurB++)
-        {
-            printf("y: ");
-            scanf("%d", &Bx);
-            printf("x: ");
-            scanf("%d", &By);
-            // Board-naas tom coordinate-iin tseg oruulsan tohioldold aldaa zaah nohtsol
-            while (Bx > SIZE || By > SIZE || Tx > SIZE || Ty > SIZE)
-            {
-                printf("\nTa coordinate-iig zov oruulna uu!\n");
-
-                printf("ongotsnii tolgoi hesgiin coordinate-iig oruulna uu\ny:  ");
-                scanf("%d", &Tx);
-                printf("x:  ");
-                scanf("%d", &Ty);
-
-                printf("ongotsnii biynii hesgiin coordinate-uudiig oruulna uu\n");
-                printf("y: ");
-                scanf("%d", &Bx);
-                printf("x: ");
-                scanf("%d", &By);
-            }
-            setPlane(plane, Bx, By, Tx, Ty);
-        }
-        printBoard(plane);
-    }
     while (100 > 0)
     {
         // Hereglegch ongots buudah
