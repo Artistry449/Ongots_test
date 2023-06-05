@@ -2,7 +2,7 @@
 #include <stdlib.h>
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
-#define SIZE 11
+#define SIZE 20
 // Board-iig coordinattai ni hewleh
 void DrawBoard(char data1[][20], char data2[][20]){
     printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
@@ -54,15 +54,34 @@ void DrawBoard(char data1[][20], char data2[][20]){
     }
 
 }
-void fire(int x, int y, int myBoard[][20], int enemyBoard[][20]){
+char fire(int x, int y, int myBoard[][20], int enemyBoard[][20], int planeData[][8][2]){
+    //togloch hooson zai onsoh tohoildol
     if(enemyBoard[x][y] == " "){
-        enemyBoard[x][y] = "H";
-        myBoard[x][y] = "H"
+        myBoard[x][y] = 'H';
+        return 'H';
     }
-    else if{
-        
+    //toglogch daisnii pngotsnii tolgoig onon ongotsiig sunsuusuh punkts
+    else if(enemyBoard[x][y] == "T"){
+        for(int i = 0; i < 8; i++){
+            if(planeData[i][0][0] == x && planeData[i][0][1] == y ){
+                myBoard[planeData[i][0][0]][planeData[i][0][1]] = 'X';
+                for(int j = 1; j < 8; j++){
+                    myBoard[planeData[i][j][0]][planeData[i][j][1]] = 'X';
+                }
+                break;
+            }
+        }
+        return 'X';
     }
-    else 
+    //toglogch daisnii ongotsiig onon sharhaduulsan tohoildol
+    else if(enemyBoard[x][y] == "B"){
+        myBoard[x][y] == "S";
+        return 'S';
+    }
+    //toglogch umnu n buudsan gazraa buudsan tohoildol
+    else {
+        return 'R';
+    }
 }
 // Hereglegch ongotsnii tolgoi, biynii code-iig coordinate-iig oruulah
 void setPlane(char plane[SIZE][SIZE], int x, int y, int tolgoiX, int tolgoiY)
@@ -77,13 +96,7 @@ void duusgah()
     exit(0);
 }
 int main()
-{
-    // sok test
-  
-
-
-
-    
+{    
     // Tx - tolgoin x tenhleg
     // Ty - tolgoin y tenhleg
     // Bx - biyiin x tenhleg
@@ -98,11 +111,11 @@ int main()
     char plane[SIZE][SIZE];
 
     // Board-aa uusgeh
-    for (i = 1; i <= 10; i++)
+    for (i = 1; i <= SIZE; i++)
     {
-        for (j = 1; j <= 10; j++)
+        for (j = 1; j <= SIZE; j++)
         {
-            plane[i][j] = '.';
+            plane[i][j] = ' ';
         }
     }
     // Eronhii durem, tanih temdeguud
