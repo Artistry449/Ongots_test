@@ -5,35 +5,49 @@
 //  Board-nii hemjee 10x10
 //  Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
 #define SIZE 21
-    void DrawBoard(char data1[][20], char data2[][20]){
-        printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
-        for(int i = 0; i < 45; i++){
-            if(i > 19 && i < 25) printf("    ");
-            else if(i == 0 || i == 25) printf("+---+");
-            else printf("---+");
+void DrawBoard(char data1[][20], char data2[][20])
+{
+    printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
+    for (int i = 0; i < 45; i++)
+    {
+        if (i > 19 && i < 25)
+            printf("    ");
+        else if (i == 0 || i == 25)
+            printf("+---+");
+        else
+            printf("---+");
+    }
+    printf("\n");
+    for (int iY = 0; iY < 20; iY++)
+    {
+        for (int iX = 0; iX < 45; iX++)
+        {
+            if (iX > 19 && iX < 25)
+                printf("    ");
+            else if (iX == 0)
+                printf("| %c |", data1[iY][iX]);
+            else if (iX == 25)
+                printf("| %c |", data2[iY][iX - 25]);
+            else if (iX > 0 && iX < 20)
+                printf(" %c |", data1[iY][iX]);
+            else
+                printf(" %c |", data2[iY][iX - 25]);
         }
         printf("\n");
-        for(int iY = 0; iY < 20; iY++){
-            for(int iX = 0; iX < 45; iX++){
-                if(iX > 19 && iX < 25) printf("    ");
-                else if(iX == 0) printf("| %c |", data1[iY][iX]);
-                else if(iX == 25) printf("| %c |", data2[iY][iX-25]);
-                else if(iX > 0 && iX < 20) printf(" %c |", data1[iY][iX]);
-                else printf(" %c |", data2[iY][iX-25]);
-            }
-            printf("\n");
-            for(int i = 0; i < 45; i++){
-                if(i > 19 && i < 25) printf("    ");
-                else if(i == 0 || i == 25) printf("+---+");
-                else printf("---+");
-            }
-            printf("\n");
+        for (int i = 0; i < 45; i++)
+        {
+            if (i > 19 && i < 25)
+                printf("    ");
+            else if (i == 0 || i == 25)
+                printf("+---+");
+            else
+                printf("---+");
         }
-
+        printf("\n");
     }
-    
-    void
-    printBoard(char plane[SIZE][SIZE])
+}
+
+void printBoard(char plane[SIZE][SIZE])
 {
     int i, j;
     printf("\nBoard: \n  ");
@@ -75,7 +89,7 @@ void AddPlane(char plane[SIZE][SIZE], int planeNum)
     for (int i = 0; i < planeNum; i++)
     {
         a = false;
-        while (a = false)
+        while (a == false)
         {
             x = rand() % 21;
             y = rand() % 21;
@@ -85,21 +99,22 @@ void AddPlane(char plane[SIZE][SIZE], int planeNum)
             }
         }
         a = false;
-        while (a = false)
+        while (a == false)
         {
             z = rand() % 4;
             switch (z)
             {
             case 0:
+            break;
             }
         }
     }
 }
 bool Deesh(char p[SIZE][SIZE], bool a, int x, int y)
 {
-    if (p[x + 1][y])
-    {
-    }
+    // if (p[x + 1][y])
+    // {
+    // }
 }
 int main()
 {
