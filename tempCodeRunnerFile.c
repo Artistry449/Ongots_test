@@ -25,22 +25,20 @@ void makeBoard()
         }
     }
 }
+
 bool Deesh(char p[SIZE][SIZE], int x, int y, bool a)
 {
     if (p[x + 1][y] == ' ' && p[x + 2][y] == ' ' && p[x + 3][y] == ' ' && p[x + 1][y - 1] == ' ' && p[x + 1][y + 1] == ' ' && p[x + 3][y - 1] == ' ' && p[x + 3][y + 1] == ' ')
     {
-        if (x + 3 <= 19 && y - 1 >= 0 && y + 1 <= 19)
-        {
-            p[x][y] = 'T';
-            p[x + 1][y] = 'B';
-            p[x + 2][y] = 'B';
-            p[x + 3][y] = 'B';
-            p[x + 1][y - 1] = 'B';
-            p[x + 1][y + 1] = 'B';
-            p[x + 3][y - 1] = 'B';
-            p[x + 3][y + 1] = 'B';
-            a = true;
-        }
+        p[x][y] = 'T';
+        p[x + 1][y] = 'B';
+        p[x + 2][y] = 'B';
+        p[x + 3][y] = 'B';
+        p[x + 1][y - 1] = 'B';
+        p[x + 1][y + 1] = 'B';
+        p[x + 3][y - 1] = 'B';
+        p[x + 3][y + 1] = 'B';
+        a = true;
     }
     return a;
 }
@@ -48,18 +46,15 @@ bool Doosh(char p[SIZE][SIZE], int x, int y, bool a)
 {
     if (p[x - 1][y] == ' ' && p[x - 2][y] == ' ' && p[x - 3][y] == ' ' && p[x - 1][y - 1] == ' ' && p[x - 1][y + 1] == ' ' && p[x - 3][y - 1] == ' ' && p[x - 3][y + 1] == ' ')
     {
-        if (x - 3 >= 0 && y - 1 >= 0 && y + 1 <= 19)
-        {
-            p[x][y] = 'T';
-            p[x - 1][y] = 'B';
-            p[x - 2][y] = 'B';
-            p[x - 3][y] = 'B';
-            p[x - 1][y - 1] = 'B';
-            p[x - 1][y + 1] = 'B';
-            p[x - 3][y - 1] = 'B';
-            p[x - 3][y + 1] = 'B';
-            a = true;
-        }
+        p[x][y] = 'T';
+        p[x - 1][y] = 'B';
+        p[x - 2][y] = 'B';
+        p[x - 3][y] = 'B';
+        p[x - 1][y - 1] = 'B';
+        p[x - 1][y + 1] = 'B';
+        p[x - 3][y - 1] = 'B';
+        p[x - 3][y + 1] = 'B';
+        a = true;
     }
     return a;
 }
@@ -67,18 +62,15 @@ bool Zuun(char p[SIZE][SIZE], int x, int y, bool a)
 {
     if (p[x][y + 1] == ' ' && p[x][y + 2] == ' ' && p[x][y + 3] == ' ' && p[x + 1][y + 1] == ' ' && p[x - 1][y + 1] == ' ' && p[x + 1][y + 3] == ' ' && p[x - 1][y + 3] == ' ')
     {
-        if (y + 3 <= 19 && x - 1 >= 0 && x + 1 <= 19)
-        {
-            p[x][y] = 'T';
-            p[x][y + 1] = 'B';
-            p[x][y + 2] = 'B';
-            p[x][y + 3] = 'B';
-            p[x - 1][y + 1] = 'B';
-            p[x + 1][y + 1] = 'B';
-            p[x - 1][y + 3] = 'B';
-            p[x + 1][y + 3] = 'B';
-            a = true;
-        }
+        p[x][y] = 'T';
+        p[x][y + 1] = 'B';
+        p[x][y + 2] = 'B';
+        p[x][y + 3] = 'B';
+        p[x - 1][y + 1] = 'B';
+        p[x + 1][y + 1] = 'B';
+        p[x - 1][y + 3] = 'B';
+        p[x + 1][y + 3] = 'B';
+        a = true;
     }
     return a;
 }
@@ -87,22 +79,19 @@ bool Baruun(char p[SIZE][SIZE], int x, int y, bool a)
 {
     if (p[x][y - 1] == ' ' && p[x][y - 2] == ' ' && p[x][y - 3] == ' ' && p[x + 1][y - 1] == ' ' && p[x - 1][y - 1] == ' ' && p[x + 1][y - 3] == ' ' && p[x - 1][y - 3] == ' ')
     {
-        if (y - 3 >= 0 && x - 1 >= 0 && x + 1 <= 19)
-        {
-            p[x][y] = 'T';
-            p[x][y - 1] = 'B';
-            p[x][y - 2] = 'B';
-            p[x][y - 3] = 'B';
-            p[x - 1][y - 1] = 'B';
-            p[x + 1][y - 1] = 'B';
-            p[x - 1][y - 3] = 'B';
-            p[x + 1][y - 3] = 'B';
-            a = true;
-        }
+        p[x][y] = 'T';
+        p[x][y - 1] = 'B';
+        p[x][y - 2] = 'B';
+        p[x][y - 3] = 'B';
+        p[x - 1][y - 1] = 'B';
+        p[x + 1][y - 1] = 'B';
+        p[x - 1][y - 3] = 'B';
+        p[x + 1][y - 3] = 'B';
+        a = true;
     }
     return a;
 }
-void addPlane(char plane[SIZE][SIZE], char plane1[SIZE][SIZE], int planeNum)
+void addPlane(char plane[SIZE][SIZE], int planeNum)
 {
     int x, y, z;
     bool a;
@@ -144,48 +133,11 @@ void addPlane(char plane[SIZE][SIZE], char plane1[SIZE][SIZE], int planeNum)
             }
         }
     }
-    for (int i = 0; i < planeNum; i++)
-    {
-        a = false;
-        while (a == false)
-        {
-            x = rand() % 20;
-            y = rand() % 20;
-
-            if (x != 0 && y != 19 || x != 0 && y != 0 || x != 19 && y != 19 || x != 19 && y != 0)
-            {
-                if (plane1[x][y] == ' ' && x != 0 && y != 0)
-                {
-                    a = true;
-                }
-            }
-        }
-        a = false;
-        while (a == false)
-        {
-            z = rand() % 5;
-            switch (z)
-            {
-            case 1:
-                a = Deesh(plane1, x, y, a);
-                break;
-            case 2:
-                a = Doosh(plane1, x, y, a);
-                break;
-            case 3:
-                a = Zuun(plane1, x, y, a);
-                break;
-            case 4:
-                a = Baruun(plane1, x, y, a);
-                break;
-            }
-        }
-    }
 }
 void DrawBoard(char data1[SIZE][SIZE], char data2[SIZE][SIZE])
 {
     int i, iX, iY;
-    printf("%40s%104s\n", "MINII BOARD", "MINII BUUDSAN");
+    printf("%40s%104s\n", "My board", "my shot board");
 
     for (i = 0; i < 45; i++)
     {
@@ -268,43 +220,39 @@ void DrawBoard(char data1[SIZE][SIZE], char data2[SIZE][SIZE])
 }
 char fire(int y, int x, char myBoard[SIZE][SIZE], char enemyBoard[SIZE][SIZE])
 {
-    // x = x-1; y = y-1;
-    //  togloch hooson zai onoh tohioldol
+    int i, j;
+    // togloch hooson zai onsoh tohoildol
     if (enemyBoard[x][y] == ' ')
     {
         myBoard[x][y] = 'H';
         return 'H';
     }
-    // toglogch daisnii pngotsnii tolgoig onon ongotsiig sunsuusuh funkts
+    // toglogch daisnii pngotsnii tolgoig onon ongotsiig sunsuusuh punkts
     else if (enemyBoard[x][y] == 'T')
     {
         myBoard[x][y] = 'X';
         return 'X';
     }
-    // toglogch daisnii ongotsiig onon sharhaduulsan tohioldol
+    // toglogch daisnii ongotsiig onon sharhaduulsan tohoildol
     else if (enemyBoard[x][y] == 'B')
     {
         myBoard[x][y] = 'S';
         return 'S';
     }
-    // toglogch umnu n buudsan gazraa buudsan tohioldol
+    // toglogch umnu n buudsan gazraa buudsan tohoildol
     else
+    {
         return 'R';
-}
-void clearScreen()
-{
-    printf("\033[2J");
-    printf("\033[1;1H");
+    }
 }
 int main()
 {
-    clearScreen();
     printf("\n---WELCOME TO PLANE-SHOOTING GAME---\n");
     printf("      ---TOGLOOMIIN DUREM---\n\n");
 
     makeBoard();
 
-    int planeNum, planeNum1, planeNum2, shootX, shootY, i, isShiljih = 0;
+    int planeNum, planeNum1, planeNum2, shootX, shootY;
     char isDestroyed;
 
     printf("Ongotsnii shirheg: ");
@@ -313,72 +261,58 @@ int main()
     planeNum1 = planeNum;
     planeNum2 = planeNum;
 
-    addPlane(myBoard1, myBoard2, planeNum1);
+    addPlane(myBoard1, planeNum1);
+    addPlane(myBoard2, planeNum2);
+
+    // printf("\nPLAYER 1 SHOOTING: ");
+    // printf("\nPLAYER 2 SHOOTING: ");
+    // player 1 window
 
     while (planeNum1 != 0 && planeNum2 != 0)
     {
+        printf("PLAYER 1\n\n");
+        DrawBoard(myBoard1, enemyBoard1);
+        printf("\nbuudah coordinataa oruulan uu \nX=");
+        scanf("%d", &shootX);
+        printf("\nbuudah coordinataa oruulan uu \nY=");
+        scanf("%d", &shootY);
 
-        for (i = 0; i < 3; i++)
+        isDestroyed = fire(shootX - 1, shootY - 1, enemyBoard1, myBoard2);
+        DrawBoard(myBoard1, enemyBoard1);
+
+        printf(" PLAYER 1 DESTROYED PLANES: %d", planeNum - planeNum2);
+        if (isDestroyed == 'X')
         {
-            printf("PLAYER 1\n\n");
-            DrawBoard(myBoard1, enemyBoard1);
-            printf("\nbuudah coordinataa oruulna uu \nX=");
-            scanf("%d", &shootX);
-            printf("\nbuudah coordinataa oruulna uu \nY=");
-            scanf("%d", &shootY);
-
-            isDestroyed = fire(shootX - 1, shootY - 1, enemyBoard1, myBoard2);
-            DrawBoard(myBoard1, enemyBoard1);
-
-            printf("---PLAYER 1-IIN USTGASAN ONGOTSNII TOO: %d---", planeNum - planeNum2);
-            if (isDestroyed == 'X')
-            {
-                planeNum2 = planeNum2 - 1;
-            }
-            if (planeNum2 == 0)
-            {
-                printf("\n---PLAYER 1 WON\n");
-                break;
-            }
+            planeNum2 = planeNum2 - 1;
         }
         if (planeNum2 == 0)
+        {
+            printf("\n---PLAYER 1 WON\n");
             break;
-        printf("\nPLAYER 2-ruu shiljih uu?\nShiljih bol 1 gj oruulna uu...\n");
-        scanf("%d", &isShiljih);
-        if (isShiljih == 1)
-            clearScreen();
+        }
         printf("\n");
         // get space
         printf("\n\n\n\n\n");
-        // player 2 window
-        for (i = 0; i < 3; i++)
-        {
-            printf("PLAYER 2\n\n");
-            DrawBoard(myBoard2, enemyBoard2);
-            printf("\nbuudah coordinataa oruulna uu \nX=");
-            scanf("%d", &shootX);
-            printf("\nbuudah coordinataa oruulna uu \nY=");
-            scanf("%d", &shootY);
 
-            isDestroyed = fire(shootX - 1, shootY - 1, enemyBoard2, myBoard1);
-            DrawBoard(myBoard2, enemyBoard2);
-            if (isDestroyed == 'X')
-            {
-                planeNum1 = planeNum1 - 1;
-            }
-            printf("---PLAYER 2-IIN USTGASAN ONGOTSNII TOO: %d---", planeNum - planeNum1);
-            if (planeNum1 == 0)
-            {
-                printf("\n---PLAYER 2 WON\n");
-                break;
-            }
+        // player 2 window
+        printf("PLAYER 2\n\n");
+        DrawBoard(myBoard2, enemyBoard2);
+        printf("\nbuudah coordinataa oruulan uu \nX=");
+        scanf("%d", &shootX);
+        printf("\nbuudah coordinataa oruulan uu \nY=");
+        scanf("%d", &shootY);
+
+        isDestroyed = fire(shootX - 1, shootY - 1, enemyBoard2, myBoard1);
+        DrawBoard(myBoard2, enemyBoard2);
+        if (isDestroyed == 'X')
+        {
+            planeNum1 = planeNum1 - 1;
         }
-        if (planeNum1 == 0)
+        printf(" PLAYER 2 DESTROYED PLANES: %d", planeNum - planeNum1);
+        if (planeNum1 == 0){
+            printf("\n---PLAYER 2 WON\n");
             break;
-        isShiljih = 0;
-        printf("\nPLAYER 1-ruu shiljih uu?\nShiljih bol 1 gj oruulna uu...\n");
-        scanf("%d", &isShiljih);
-        if (isShiljih == 1)
-            clearScreen();
+        }
+        
     }
 }
