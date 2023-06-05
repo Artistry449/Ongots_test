@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include <time.h>
 #include <stdbool.h>
 
 //test bys odoodos
+=======
+>>>>>>> b377c25c7b598b0e1d90a11dfabe7d29464ebc21
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
 #define SIZE 21
 // Board-iig coordinattai ni hewleh
+<<<<<<< HEAD
 /*
 test desu
+=======
+
+>>>>>>> b377c25c7b598b0e1d90a11dfabe7d29464ebc21
 void DrawBoard(char data1[][20], char data2[][20]){
     printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
     for(int i = 0; i < 45; i++){
