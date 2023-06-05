@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-//test bys odoodos
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
 #define SIZE 11
