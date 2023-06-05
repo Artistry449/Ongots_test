@@ -1,14 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Erka test1
-// Gnbaaa test1
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
 #define SIZE 11
 // Board-iig coordinattai ni hewleh
 
-// test111 hello test333
 void DrawBoard(char data1[][20], char data2[][20]){
     printf("%40s%106s\n", "PLAYER 1", "PLAYER 2");
     for(int i = 0; i < 45; i++){
