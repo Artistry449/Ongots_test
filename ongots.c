@@ -9,7 +9,7 @@
 >>>>>>> b377c25c7b598b0e1d90a11dfabe7d29464ebc21
 // Board-nii hemjee 10x10
 // Massive 0-ees eheldeg ba board-iig 1-ees ehluulhiin tuld SIZE=11
-#define SIZE 21
+#define SIZE 20
 // Board-iig coordinattai ni hewleh
 <<<<<<< HEAD
 /*
@@ -97,15 +97,24 @@ void AddPlane(char plane[SIZE][SIZE], int planeNum){
             z = rand()%4;
             switch(z){
                 case 0:
-
+                Deesh(plane[SIZE][SIZE], a, x, y);
             }
         }
     }
 }
 bool Deesh(char p[SIZE][SIZE], bool a, int x, int y){
-    if(p[x+1][y]){
-        
+    if(p[x+1][y] == '.' && p[x+2][y] == '.' && p[x+3][y] == '.' && p[x+1][y-1] == '.' && p[x+1][y+1] == '.' p[x+3][y-1] == '.' && p[x+3][y+1] == '.'){
+        p[x][y] = 'T';
+        p[x+1][y] = 'B';
+        p[x+2][y] = 'B';
+        p[x+3][y] = 'B';
+        p[x+1][y-1] = 'B';
+        p[x+1][y+1] = 'B';
+        p[x+3][y-1] = 'B';
+        p[x+3][y+1] = 'B';
+        a = true;
     }
+    return a;
 }
 int main()
 {
